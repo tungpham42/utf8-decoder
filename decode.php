@@ -26,7 +26,8 @@ $currentURL = "http" . (isset($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER[
         $utf8String = $_POST["utf8_string"];
         $decodedString = mb_convert_encoding($utf8String, "windows-1252", "UTF-8");
         // $decodedString = utf8_decode($utf8String);
-        echo "<p>Decoded String: $decodedString</p>";
+        echo "<p>Decoded String:</p>";
+        echo "<pre>$decodedString</pre>";
     } else {
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["file"])) {
             $file = $_FILES["file"];
